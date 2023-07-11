@@ -1,26 +1,34 @@
-#include<stdio.h>
-
 // Task 5:
- 
-// Section:  	
- 
-// A university has the following rules for a student to qualify for a degree with A as the main subject and B as the subsidiary subject:
-// (a)	He should get 55 percent or more in A and 45 percent or more in B.
-// (b)	If he gets than 55 percent in A he should get 55 percent or more in B. However, he should get at least 45 percent in A.
-// (c)	If he gets less than 45 percent in B and 65 percent or more in A he is allowed to reappear in an examination in B to qualify.
-// (d)	In all other cases he is declared to have failed.
+// Write a program to check whether a triangle is valid or not, when the three angles of the triangle are entered through the keyboard. A triangle is valid if the sum of all the three angles is equal to 180 degrees.
 
-// Write a program to receive marks in A and B and Output whether the student has passed, failed or is allowed to reappear in B. (Using Ternary operator)
+
+
+
+#include<stdio.h>
 
 
 int main(){
-    int a,b;
-    printf("Enter your Marks for A and B (A is main subject while B is subsidiary.) : ");
-    scanf("%d %d",&a,&b);
-a >= 55 && b >= 45 ? printf("The student has passed! ") : 
-     (a < 55 && a >= 45) &&  b >= 55 ? printf("The student has passed! ") : 
-     b < 45  && a >= 65 ? printf("The student is allowed to reappear in B") :
-     printf("The student has faild! ");
+
+   float ang1,ang2,ang3;
+
+   printf("Enter the first angle of triangle: ");
+   scanf("%f",&ang1);
+   printf("Enter the second angle of triangle: ");
+   scanf("%f",&ang2);
+   printf("Enter the third angle of triangle: ");
+   scanf("%f",&ang3);
+
+
+if (ang1 + ang2 +ang3 == 180)
+{
+    printf("The triangle is valid\n");
+}else{
+
+    printf("The triangle is not valid\n");
+}
+
+
+
 
     return 0;
 }

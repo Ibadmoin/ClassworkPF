@@ -1,20 +1,35 @@
-#include<stdio.h>
 
 // Task 4:
-// Write a program for quiz, where the system asks question and user will select answer from 
-// the given four options. On correct answer the program will congratulate and on wrong answer 
-// print sorry message.
- 
+// If the ages of three students are input through the keyboard, write a program to determine the youngest of the three.
+
+
+#include<stdio.h>
+
+
 int main(){
-printf("Question: What is the primary component responsible for the greenhouse effect on Earth? \n Options: \n");
-printf("a) Carbon monoxide (CO) \nb) Methane (CH4) \nc) Nitrous oxide (N2O) \nd) Carbon dioxide (CO2)\n\nSelect any option : ");
-char opt;
-scanf("%c",&opt);
-if(opt=='d'){ 
-    printf("Congratulations! Your answers is correct.");
-} else{
-    printf("Sorry! Your answers is wrong.");
-}
+
+    int std1,std2,std3;
+    printf("Enter student 1 age: ");
+    scanf("%d",&std1);
+    printf("Enter student 2 age: ");
+    scanf("%d",&std2);
+    printf("Enter student 3 age: ");
+    scanf("%d",&std3);
+
+    if (std1 < std2 && std1 < std3)
+    {
+        printf("Student 1 is youngest!\n");
+    }else if (std2 < std1 && std2 <std3)
+    {
+        printf("Student 2 is youngest!\n");
+    }else {
+        printf("Student 3 is youngest!\n");
+
+    }
+    
+    
+
+
 
 
     return 0;

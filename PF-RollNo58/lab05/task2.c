@@ -1,25 +1,62 @@
+// Task 2:
+// Write a program to calculate the salary as per the following table:
+// For Graduate enter ‘G’ and for Post-Graduate accept ‘P’.
+
+
+
 #include<stdio.h>
 
-// Task 2:
-// Any character is entered through the keyboard; write a program to determine 
-// whether the character entered is a capital letter, a small case letter, 
-// a digit or a special symbol.
+
 int main(){
-char input;
-printf("Press any key! ");
-scanf("%c",&input);
-if(input >= 65 && input <= 90 ){
-    printf("It's a Capital letter!");
-} else if(input >= 97 && input <= 122){
-    printf("It's a Small letter!");
+    char gender;
+    char qualification;
+    int yearOfService;
 
-} else if(input >= 48  && input <= 57){
-    printf("It's a Numeric digit!");
+    printf("Enter Gender (M/F): ");
+    scanf(" %c", &gender);
+    printf("Enter qualification (G/P):");
+    scanf(" %c",&qualification);
+    printf("Enter Year of service: ");
+    scanf("%d",&yearOfService);
 
-} else {
-    printf("It's a Special Symbol!");
+    if(gender == 'M' && yearOfService >=10 && qualification == 'P'){
+        printf("Salary: 15000");
 
-}
+    }else if (gender == 'M' && yearOfService >=10 && qualification == 'G')
+    {
+        printf("Salary: 10000");
+       
+    }else if (gender == 'M' && yearOfService < 10 && qualification == 'P')
+    {
+
+        printf("Salary: 10000");
+    } else if (gender == 'M' && yearOfService < 10 && qualification == 'G')
+    {
+        printf("Salary: 7000");
+       
+    }else if (gender == 'F' && yearOfService >= 10 && qualification == 'P')
+    {
+        printf("Salary: 12000");
+        
+    }else if (gender == 'F' && yearOfService >= 10 && qualification == 'G')
+    {
+        printf("Salary: 9000");
+
+    } else if (gender == 'F' && yearOfService < 10 && qualification == 'P')
+    {
+        printf("Salary: 10000");
+    }else if (gender == 'F' && yearOfService < 10 && qualification == 'G')
+    {
+        
+        printf("Salary: 6000");
+    }
+    
+    
+    
+    
+    
+    
+
 
 
     return 0;
