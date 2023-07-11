@@ -1,23 +1,35 @@
 #include<stdio.h>
 
 
-// 4- Write a function which receives a float and an int from main( ), finds the product of these two and returns the product which is printed through main( )
-float prod(float a, int b);
+// Task 4:
+// Take 10 numbers input from user in an array, calculate the sum and average of those 10 numbers.
+
 
 int main(){
 
-    float a = 2.7;
-    int b = 2;
+    int arr[10];
+    int sum = 0;
 
-float product = prod(a,b);
-printf("%.1f",product);
+for (int i = 0; i < 10; i++)
+{
+    printf("Enter %d element for the array: ",i+1);
+    scanf("%d",&arr[i]);
+}
+
+// Calculating Summation of all elements present inside Array
+  for (int i = 0; i < 10; i++)
+  {
+    printf("%d ",arr[i]);
+    sum = sum + arr[i];
+  }
+
+  printf("\nThe summation of array is: %d",sum);
+  printf("\nThe average of array is: %.1f",(float)sum/10);
+  
+  
+
+
+
+
     return 0;
 }
-
-
-float prod(float a,int b){
-
-    return a*b;
-
-}
-

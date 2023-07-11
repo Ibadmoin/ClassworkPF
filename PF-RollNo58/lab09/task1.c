@@ -1,28 +1,28 @@
 #include<stdio.h>
 
 
-// 1- Write a function to calculate the factorial value of any integer entered through the keyboard.  
-int fact(int num);
+
+// Task 1:
+// Write a program that will insert 10 integer elements in an array and print them in new lines.
+
 
 int main(){
+    int arr[10];
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Enter %d integer: ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    int i = 0;
+    printf("\nThe elements in array are: ");
+    while (i<10)
+    {
+        printf("%d ",arr[i]);
+        i++;
+    }
+    
+    
 
-int n;
-printf("Enter an Integer: ");
-scanf("%d",&n);
-fact(n);
+
     return 0;
 }
-
-
-int fact(int num){
-int fact = 1;
-for (int i = num; i > 0; i--)
-{
-    fact = fact*i;
-}
-printf("The factorial is %d",fact);
-
-
-
-}
-

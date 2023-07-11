@@ -1,20 +1,37 @@
 #include<stdio.h>
 
+// Task 5:
+// Write a program to create two character arrays of same length and copy the content of one array into another in reverse order. 
 
-// 5- Write a function that receives 5 integers and returns the sum, and average of these numbers. Call this function from main( ) and print the results in main( ).  
-
-void calculateSumAndAvg(int num1, int num2, int num3, int num4, int num5){
-    int sum = num1+num2+num3+num4+num5;
-    float average = (num1+num2+num3+num4+num5)/5;
-    printf("The sum is %d\n",sum);
-    printf("The average is %.1f",average);
-
-}
 int main(){
-    int num1,num2,num3,num4,num5;
-    printf("Enter five numbers: ");
-    scanf("%d %d %d %d %d",&num1,&num2,&num3,&num4,&num5);
+   char  arr1[4] = {};
+   char  arr2[4] = {'D','C','B','A'};
+   int length = sizeof(arr2)/sizeof(arr2[0]);
 
-    calculateSumAndAvg(num1,num2,num3,num4,num5);
+
+for (int i = length-1,j = 0;i>=0;i--,j++ )
+{
+    arr1[j] = arr2[i];
+}
+
+   
+
+   int i = 0;
+   while (i<length)
+   {
+    printf(" %c ",arr1[i]);
+    i++;
+   }
+   
+
+
+
+   
+
+
+
+
+
     return 0;
 }
+

@@ -1,37 +1,56 @@
 #include<stdio.h>
 
 
-// 2- Write a function power (a, b) to calculate the value of ‘a’ raised to the power of ‘b’. 
+
+// Task 2:
+// Write a program that will ask user to input index number from where to delete a number from array.
 
 
-int power(int a, int b);
+
 int main(){
+    int size,arr[100];
+// taking size of the array for elements to be input through keyboard.
+    printf("Enter the size of the array (upto 100): ");
+    scanf("%d",&size);
 
-int a =4;
-int b = 4;
-power(a,b);
+    // inserting elements of array from user.
 
-    return 0;
+    for (int i = 0; i < size; i++)
+    {
+        printf("Enter %d element of the array: ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    
+// Showing current array to user before deleting.
+
+for (int i = 0; i < size; i++)
+{
+    printf("%d ",arr[i]);
+}
+
+// asking user the index to delete that element from array;
+int index;
+printf("\nEnter the index of the element you want to delete: ");
+scanf("%d",&index);
+
+if (index < 0 || index > 100)
+{
+    printf("Invalid Index!\n");
+}else {
+    // deleting the specific element from array.
+
+    for (int i = index; i < size; i++)
+    {
+        arr[i] = arr[i+1];
+    }
+    // showing updated array after deletion
+    printf("\nThe elements in update array are : ");
+    for(int i=0 ;i<size-1;i++){
+        printf("%d ",arr[i]);
+    }
+    
 }
 
 
-int power(int a, int b){
-     int result = 1;
-    if(b==1 || b == 0 ){
-        printf("%d", a );
-    } else {
-      for (int i = 0; i < b; i++)
-      {
-      
-       result *= a;
-        // printf("%d",i);
-      }
-      printf("The value is %d",result);
-      
-        
-        
-
-    }
-
-
+    return 0;
 }
