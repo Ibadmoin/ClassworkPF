@@ -1,28 +1,17 @@
-#include<stdio.h>
-
-
-
 // Task 1:
-// Write a program that will insert 10 integer elements in an array and print them in new lines.
+// Write a program that accepts one string and then find the length of that string and print it.
 
+#include <stdio.h>
+#include <string.h>
 
-int main(){
-    int arr[10];
-    for (int i = 0; i < 10; i++)
-    {
-        printf("Enter %d integer: ",i+1);
-        scanf("%d",&arr[i]);
-    }
-    int i = 0;
-    printf("\nThe elements in array are: ");
-    while (i<10)
-    {
-        printf("%d ",arr[i]);
-        i++;
-    }
-    
-    
+int main()
+{
+    char str[50];
+    printf("Enter string: ");
+    scanf(" %[^\n]s", str);
 
+    int len = strlen(str);
+    printf("\nLength of given String is: %d\n ", len);
 
     return 0;
 }

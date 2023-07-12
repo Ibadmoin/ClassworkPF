@@ -1,72 +1,45 @@
-#include <stdio.h>
-
 // Task 3:
-// Write a program to find out the largest and the smallest number in an array.
+// Fifteen numbers are entered from the keyboard into an array with 3 rows and 5 columns. The number to be searched is entered through the keyboard by the user. Write a program to find if the number to be searched is present in the array and if it is present, display the number of times it appears in the array.
 
-#define max_size 100
-
-int largestArr(int arr[], int size);
-int smallestArr(int arr[], int size);
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
-
-    int size, arr[max_size];
-    // taking the size of the array from user
-    printf("Enter the size of array (upto %d): ", max_size);
-    scanf("%d", &size);
-
-    // getting elements for the array of specified size.
-
-    for (int i = 0; i < size; i++)
+    int arr[3][5];
+    int searchNo;
+    int count = 0;
+    printf("Enter the array element (15 numbers): ");
+    for (int i = 0; i < 3; i++)
     {
-        printf("Enter %d element for the array: ", i + 1);
-        scanf("%d", &arr[i]);
+        for (int j = 0; j < 5; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
     }
-    // showing the current array that is stored.
-    printf("The elements of array are: ");
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    // calling largestarray function.
-    int max = largestArr(arr, size);
-    // calling Smallestarray function
-    int min = smallestArr(arr, size);
 
-    printf("\nThe largest number in array is %d", max);
-    printf("\nThe smallest number in array is %d", min);
+    printf("Enter number to be searched: ");
+    scanf("%d", &searchNo);
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (arr[i][j] == searchNo)
+            {
+                count++;
+            }
+        }
+    }
+
+    if (count > 0)
+    {
+        printf("The number %d is present %d times in the array.", searchNo, count);
+    }
+    else
+    {
+        printf("Number not found.");
+    }
 
     return 0;
-}
-
-// defining respective functions.
-
-int largestArr(int arr[], int size)
-{
-
-    int max = arr[0];
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] > max)
-        {
-            max = arr[i];
-        }
-    }
-
-    return max;
-}
-
-int smallestArr(int arr[], int size)
-{
-    int min = arr[0];
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] < min)
-        {
-            min = arr[i];
-        }
-    }
-
-    return min;
 }

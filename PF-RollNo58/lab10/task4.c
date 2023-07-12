@@ -1,35 +1,40 @@
-#include<stdio.h>
-
-
 // Task 4:
-// Take 10 numbers input from user in an array, calculate the sum and average of those 10 numbers.
+// Write a program to pick up the largest number and sum of all the integers from any 5 x 5 matrix.
 
+#include <stdio.h>
 
-int main(){
-
-    int arr[10];
-    int sum = 0;
-
-for (int i = 0; i < 10; i++)
+int main()
 {
-    printf("Enter %d element for the array: ",i+1);
-    scanf("%d",&arr[i]);
-}
 
-// Calculating Summation of all elements present inside Array
-  for (int i = 0; i < 10; i++)
-  {
-    printf("%d ",arr[i]);
-    sum = sum + arr[i];
-  }
+    int arr[5][5];
 
-  printf("\nThe summation of array is: %d",sum);
-  printf("\nThe average of array is: %.1f",(float)sum/10);
-  
-  
+    printf("Enter the elements of array (25 numbers): ");
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
 
+    // Finding Largest Number in Matrix and summition of them
+    int largest = arr[0][0];
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (arr[i][j] > largest)
+            {
+                largest = arr[i][j];
+            }
 
+            sum += arr[i][j];
+        }
+    }
 
+    printf("The largest number in the matrix is: %d\n", largest);
+    printf("The sum of all integers in the matrix is: %d\n", sum);
 
     return 0;
 }

@@ -1,56 +1,36 @@
-#include<stdio.h>
-
-
-
 // Task 2:
-// Write a program that will ask user to input index number from where to delete a number from array.
+// Write a program that takes input in a string (char array) and ‘find’ a particular character and ‘replace’ that character. The program should replace all the occurrences of that particular character with the new character.
+// For example:
+// Array: “I love programming” find character: ‘m’
+// replace with character: ‘n’
+// then the string should become “I love progranning”
 
+#include <stdio.h>
+#include <string.h>
 
-
-int main(){
-    int size,arr[100];
-// taking size of the array for elements to be input through keyboard.
-    printf("Enter the size of the array (upto 100): ");
-    scanf("%d",&size);
-
-    // inserting elements of array from user.
-
-    for (int i = 0; i < size; i++)
-    {
-        printf("Enter %d element of the array: ",i+1);
-        scanf("%d",&arr[i]);
-    }
-    
-// Showing current array to user before deleting.
-
-for (int i = 0; i < size; i++)
+int main()
 {
-    printf("%d ",arr[i]);
-}
 
-// asking user the index to delete that element from array;
-int index;
-printf("\nEnter the index of the element you want to delete: ");
-scanf("%d",&index);
+    char str[50];
+    char findChar, replaceChar;
+    printf("Enter strings: ");
+    scanf(" %[^\n]s", str);
 
-if (index < 0 || index > 100)
-{
-    printf("Invalid Index!\n");
-}else {
-    // deleting the specific element from array.
+    printf("Enter character to find: ");
+    scanf(" %c", &findChar);
+    printf("Enter character to replace with: ");
+    scanf(" %c", &replaceChar);
 
-    for (int i = index; i < size; i++)
+    int len = strlen(str);
+    for (int i = 0; i < len; i++)
     {
-        arr[i] = arr[i+1];
+        if (str[i] == findChar)
+        {
+            str[i] = replaceChar;
+        }
     }
-    // showing updated array after deletion
-    printf("\nThe elements in update array are : ");
-    for(int i=0 ;i<size-1;i++){
-        printf("%d ",arr[i]);
-    }
-    
-}
 
+    printf("Modified strings is: %s", str);
 
     return 0;
 }
